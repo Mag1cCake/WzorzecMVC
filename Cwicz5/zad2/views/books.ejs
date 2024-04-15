@@ -1,0 +1,10 @@
+<h1>List of Books</h1>
+<ul>
+    <% if (books.length > 0) { %>
+        <% books.forEach(book => { %>
+            <li><%= book.title %> (Published: <%= book.publishingYear %>)</li>
+        <% }); %>
+    <% } else { %>
+        <li>No books has been found</li>
+    <% } %>
+</ul>
