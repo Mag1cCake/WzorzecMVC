@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Books</h1>
+    <% if (userId === undefined) { %>
+        <p>Sorry, you cannot access the library without logging into the system.</p>
+    <% } else { %>
+        <ul>
+            <% books.forEach(book => { %>
+                <li>
+                    <a href="/books/<%= book.id %>"><%= book.title %></a> by <%= book.author %>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+    <a href="/user/set">Login</a>
+</body>
+</html>
